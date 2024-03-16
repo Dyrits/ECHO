@@ -1,0 +1,6 @@
+node_modules
+dist
+
+# Integrated Development Environment (IDE) files
+.vscode/
+.idea/
