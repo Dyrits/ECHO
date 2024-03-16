@@ -211,7 +211,7 @@ const App: Component = () => {
                   {/* GLIDE POST END */}
                   {/* HOME PAGE END */}
                 </div>
-                <div class="flex-it md:w-92 w-0 mt-4">
+                <div class="flex-it md:w-92 mt-4">
                   {/* TRENDS SIDEBAR START */}
                   <div class="bg-gray-800 overflow-hidden flex-it rounded-2xl">
                     <div class="flex-it p-4">

@@ -1,12 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
 
-const generateREMSizeClass = (limit, from) => {
-  return Array.from({ length: (limit / 16)}).reduce((sizes, _, index) => {
-    const size = from + (index * 4);
-    sizes[size] = `${(from / 4) + index}rem`;
-    return sizes;
-  }, {});
+const generateREMSizes = (limit, from = 80) => {
+  const sizes  = {};
+  for (let quadruple = from; quadruple < limit / 4; quadruple += 4 ) {
+    sizes[quadruple] = `${(quadruple * 4) / 16}rem`;
+  }
+
+  return sizes;
 }
 
 module.exports = {
@@ -20,11 +21,11 @@ module.exports = {
       ...defaultTheme.screens
     },
     extend: {
-      width: generateREMSizeClass(1024),
-      minHeight: generateREMSizeClass(1024, 0),
-      maxHeight: generateREMSizeClass(1024, 0),
-      maxWidth: generateREMSizeClass(1024, 0),
-      minWidth: generateREMSizeClass(1024, 0),
+      width: generateREMSizes(1024),
+      minHeight: generateREMSizes(1024, 0),
+      maxHeight: generateREMSizes(1024, 0),
+      maxWidth: generateREMSizes(1024, 0),
+      minWidth: generateREMSizes(1024, 0),
       borderWidth: {
         "1": "1px"
       }
