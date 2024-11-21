@@ -5,6 +5,8 @@ import { IoNotificationsCircleOutline } from "solid-icons/io";
 import { RiMapCompassDiscoverLine } from "solid-icons/ri";
 import { FiMoreHorizontal } from "solid-icons/fi";
 
+import { user } from "@/App";
+
 const Sidebar: Component = () => {
   return (
     <header class="lg:flex-grow flex-it items-end">
@@ -88,7 +90,7 @@ const Sidebar: Component = () => {
                   <div class="w-10 h-10 overflow-visible">
                     <img
                       class="rounded-full"
-                      src="https://www.pinclipart.com/picdir/middle/133-1331433_free-user-avatar-icons-happy-flat-design-png.png"
+                      src={user.avatar}
                     ></img>
                   </div>
                 </div>

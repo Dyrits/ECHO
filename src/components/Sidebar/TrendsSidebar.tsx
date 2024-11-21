@@ -1,6 +1,6 @@
 import { Component, For } from "solid-js";
 
-import { randomize } from "../../utilities";
+import { randomize } from "@/utilities";
 
 type Trend = {
   category: string;
