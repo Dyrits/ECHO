@@ -1,10 +1,12 @@
-import { Component, createUniqueId } from "solid-js";
+import { Component, createUniqueId, lazy } from "solid-js";
 import { Route, Router } from "@solidjs/router";
 
 import { User } from "./types";
-import HomePage from "./pages/HomePage";
-import SignInPage from "@/pages/SignInPage";
-import SignUpPage from "@/pages/SignUpPage";
+
+import HomePage from "@/pages/HomePage";
+
+const SignInPage = lazy(() => import("@/pages/SignInPage"));
+const SignUpPage = lazy(() => import("@/pages/SignUpPage"));
 
 
 export const user: User = {

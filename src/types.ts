@@ -1,3 +1,5 @@
+import { IconTypes } from "solid-icons";
+
 export type User = {
   id: string;
   name: string;
@@ -11,4 +13,10 @@ export type Echo = {
   content: string;
   likes: number;
   murmurs: Echo[];
+};
+
+export type Link = {
+  label: string;
+  icon: IconTypes | (() => Element)
+  href: string;
 };

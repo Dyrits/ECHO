@@ -1,4 +1,4 @@
-import { Component } from "solid-js";
+import { Component, For } from "solid-js";
 import { AiOutlineHome } from "solid-icons/ai";
 import { CgMoreO, CgProfile } from "solid-icons/cg";
 import { IoNotificationsCircleOutline } from "solid-icons/io";
@@ -6,6 +6,15 @@ import { RiMapCompassDiscoverLine } from "solid-icons/ri";
 import { FiMoreHorizontal } from "solid-icons/fi";
 
 import { user } from "@/App";
+import { Link } from "@/types";
+
+const links: Link[] = [
+  { icon: ({ size }) => <AiOutlineHome size={size} />, label: "Home", href: "/" },
+  { icon: ({ size }) => <CgProfile size={size} />, label: "Profile", href: "/profile" },
+  { icon: ({ size }) => <CgMoreO size={size} />, label: "More", href: "/more" },
+  { icon: ({ size }) => <IoNotificationsCircleOutline size={size} />, label: "Notifications", href: "/notifications" },
+  { icon: ({ size }) => <RiMapCompassDiscoverLine size={size} />, label: "Discover", href: "/discover" }
+];
 
 const Sidebar: Component = () => {
   return (
@@ -21,71 +30,37 @@ const Sidebar: Component = () => {
               </div>
               <div class="my-1 w-full flex-it">
                 <nav class="flex-it items-start">
-                  <a class="flex-it items-start flex-grow w-full" href="#">
-                    <div class="p-3 flex-row justify-center items-center flex-it rounded-3xl hover:bg-gray-800 hover:rounded-3xl transition duration-200">
-                      <div class="flex-it">
-                        <AiOutlineHome size={24} />
-                      </div>
-                      <div class="mx-4 text-2xl truncate xl:block hidden">
-                        <span class="truncate">Home</span>
-                      </div>
-                    </div>
-                  </a>
-                  <a class="flex-it items-start flex-grow w-full" href="#">
-                    <div class="p-3 flex-row justify-center items-center flex-it rounded-3xl hover:bg-gray-800 hover:rounded-3xl transition duration-200">
-                      <div class="flex-it">
-                        <CgProfile size={24} />
-                      </div>
-                      <div class="mx-4 text-2xl truncate xl:block hidden">
-                        <span class="truncate">Profile</span>
-                      </div>
-                    </div>
-                  </a>
-                  <a class="flex-it items-start flex-grow w-full" href="#">
-                    <div class="p-3 flex-row justify-center items-center flex-it rounded-3xl hover:bg-gray-800 hover:rounded-3xl transition duration-200">
-                      <div class="flex-it">
-                        <CgMoreO size={24} />
-                      </div>
-                      <div class="mx-4 text-2xl truncate xl:block hidden">
-                        <span class="truncate">More</span>
-                      </div>
-                    </div>
-                  </a>
-                  <a class="flex-it items-start flex-grow w-full" href="#">
-                    <div class="p-3 flex-row justify-center items-center flex-it rounded-3xl hover:bg-gray-800 hover:rounded-3xl transition duration-200">
-                      <div class="flex-it">
-                        <IoNotificationsCircleOutline size={24} />
-                      </div>
-                      <div class="mx-4 text-2xl truncate xl:block hidden">
-                        <span class="truncate">Notification</span>
-                      </div>
-                    </div>
-                  </a>
-                  <a class="flex-it items-start flex-grow w-full" href="#">
-                    <div class="p-3 flex-row justify-center items-center flex-it rounded-3xl hover:bg-gray-800 hover:rounded-3xl transition duration-200">
-                      <div class="flex-it">
-                        <RiMapCompassDiscoverLine size={24} />
-                      </div>
-                      <div class="mx-4 text-2xl truncate xl:block hidden">
-                        <span class="truncate">Discover</span>
-                      </div>
-                    </div>
-                  </a>
+                  <For each={links}>
+                    {link => (
+                      <a class="flex-it items-start flex-grow w-full" href={link.href}>
+                        <div class="p-3 flex-row justify-center items-center flex-it rounded-3xl hover:bg-gray-800 hover:rounded-3xl transition duration-200">
+                          <div class="flex-it">{link.icon({ size: 24 })}</div>
+                          <div class="mx-4 text-2xl truncate xl:block hidden">
+                            <span class="truncate">{link.label}</span>
+                          </div>
+                        </div>
+                      </a>
+                    )}
+                  </For>
                 </nav>
               </div>
               {/* GLIDER SEND-MESSAGE BUTTON */}
               <div class="my-1 flex-it w-10/12 cursor-pointer">
-                <div class="bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-full flex-it transition">
-                  <div class="flex-it flex-row text-xl font-bold text-white items-start justify-center truncate duration-200">
-                    <div>Echo It</div>
+                <div
+                  class="bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-full flex-it transition">
+                  <div
+                    class="flex-it flex-row text-xl font-bold text-white items-start justify-center truncate duration-200">
+                    <div class="block xl:hidden">E</div>
+                    <div class="hidden xl:block">Send an echo</div>
                   </div>
                 </div>
               </div>
             </div>
-            {/* PROFILE MENU */}
+            {/* PROFILE MENU */ }
             <div class="flex-it my-3 hover:cursor-pointer">
-              {/* POPUP START*/}
-              <div class="flex-it items-center flex-row p-3 rounded-3xl hover:bg-gray-800 hover:rounded-3xl transition duration-200 cursor-pointer">
+              {/* POPUP START*/ }
+              <div
+                class="flex-it items-center flex-row p-3 rounded-3xl hover:bg-gray-800 hover:rounded-3xl transition duration-200 cursor-pointer">
                 <div class="flex-it">
                   <div class="w-10 h-10 overflow-visible">
                     <img
