@@ -1,4 +1,4 @@
-import { IconTypes } from "solid-icons";
+import type { IconTypes } from "solid-icons";
 
 export type User = {
   id: string;
@@ -17,6 +17,6 @@ export type Echo = {
 
 export type Link = {
   label: string;
-  icon: IconTypes | (() => Element)
+  icon: IconTypes | (() => Element);
   href: string;
 };

@@ -1,8 +1,8 @@
-import { Component } from "solid-js";
-import { FiTrash } from "solid-icons/fi";
 import { AiOutlineMessage } from "solid-icons/ai";
 import { FaRegularHeart } from "solid-icons/fa";
-import { Echo } from "../../types";
+import { FiTrash } from "solid-icons/fi";
+import type { Component } from "solid-js";
+import type { Echo } from "../../types";
 
 import "@/extensions";
 
@@ -11,7 +11,7 @@ type Properties = {
 };
 
 const EchoPost: Component<Properties> = (props) => {
-  const echo= () => props.echo;
+  const echo = () => props.echo;
   const user = () => echo().author;
 
   return (
@@ -19,11 +19,7 @@ const EchoPost: Component<Properties> = (props) => {
       <div class="flex-it flex-row">
         <div class="flex-it mr-4">
           <div class="w-12 h-12 overflow-visible cursor-pointer transition duration-200 hover:opacity-80">
-            <img
-              class="rounded-full"
-              src={user().avatar}
-              alt="avatar"
-            ></img>
+            <img alt="avatar" class="rounded-full" src={user().avatar}></img>
           </div>
         </div>
         <article class="flex-it flex-grow flex-shrink cursor-pointer">
@@ -32,7 +28,7 @@ const EchoPost: Component<Properties> = (props) => {
               <div>
                 <span class="font-bold">{echo().author.name}</span>
                 <span class="mx-2">&#8226;</span>
-                <span class="text-gray-400">{ echo().date.ago() }</span>
+                <span class="text-gray-400">{echo().date.ago()}</span>
               </div>
               <div class="text-gray-400 cursor-pointer transition hover:text-red-400">
                 <FiTrash size={16} />

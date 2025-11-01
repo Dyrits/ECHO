@@ -1,4 +1,4 @@
-import { Component, For } from "solid-js";
+import { type Component, For } from "solid-js";
 
 import { randomize } from "@/utilities";
 
@@ -12,34 +12,34 @@ type Trend = {
 const trends: Trend[] = [
   {
     category: "Sports",
+    echoes: randomize(1000, 5000),
     title: "UEFA Champions League",
-    echoes: randomize(1000, 5000)
   },
   {
     category: "Finance",
+    echoes: randomize(1000, 5000),
     title: "Bitcoin",
-    echoes: randomize(1000, 5000)
   },
   {
     category: "Gaming",
+    echoes: randomize(1000, 5000),
     title: "Valorant",
-    echoes: randomize(1000, 5000)
   },
   {
     category: "Technology",
+    echoes: randomize(1000, 5000),
     title: "Apple",
-    echoes: randomize(1000, 5000)
   },
   {
     category: "Movies",
+    echoes: randomize(1000, 5000),
     title: "The Batman",
-    echoes: randomize(1000, 5000)
   },
   {
     category: "Music",
+    echoes: randomize(1000, 5000),
     title: "Drake",
-    echoes: randomize(1000, 5000)
-  }
+  },
 ];
 
 const TrendsSidebar: Component = () => {
@@ -49,7 +49,7 @@ const TrendsSidebar: Component = () => {
         <span class="text-xl font-bold">Trends</span>
       </div>
       <For each={trends}>
-        {trend => (
+        {(trend) => (
           <div class="flex-it p-4 cursor-pointer transition duration-200 hover:bg-gray-700">
             <div class="flex-it">
               <span class="text-gray-400 text-sm">{trend.category}</span>

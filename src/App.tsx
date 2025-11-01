@@ -1,26 +1,23 @@
-import { Component, createUniqueId, lazy } from "solid-js";
 import { Route, Router } from "@solidjs/router";
-
-import { User } from "./types";
-
+import { type Component, createUniqueId, lazy } from "solid-js";
 import HomePage from "@/pages/HomePage";
+import type { User } from "./types";
 
 const SignInPage = lazy(() => import("@/pages/SignInPage"));
 const SignUpPage = lazy(() => import("@/pages/SignUpPage"));
 
-
 export const user: User = {
+  avatar: "https://avatars.githubusercontent.com/u/61299170?v=4",
   id: createUniqueId(),
   name: "Dyrits",
-  avatar: "https://avatars.githubusercontent.com/u/61299170?v=4"
 };
 
 const App: Component = () => {
   return (
     <Router>
-      <Route path="/" component={HomePage} />
-      <Route path="/sign-in" component={SignInPage} />
-      <Route path="/sign-up" component={SignUpPage} />
+      <Route component={HomePage} path="/" />
+      <Route component={SignInPage} path="/sign-in" />
+      <Route component={SignUpPage} path="/sign-up" />
     </Router>
   );
 };

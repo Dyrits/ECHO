@@ -22,4 +22,4 @@ Date.prototype.ago = function () {
   }
 
   return `${seconds}s`;
-}
+};

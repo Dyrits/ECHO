@@ -1,4 +1,4 @@
-import { ParentComponent } from "solid-js";
+import type { ParentComponent } from "solid-js";
 
 import { Sidebar, TrendsSidebar } from "../components/Sidebar";
 
@@ -13,9 +13,7 @@ const MainLayout: ParentComponent = ({ children }) => {
               <div class="flex-it flex-row justify-between min-h-full">
                 <div class="flex-it md:max-w-152 w-full border-x-1 border-solid border-gray-700">
                   <div class="sticky z-10 flex-it top-0">
-                    <div class="flex-it h-14 p-4 xl:text-xl text-sm font-bold z-10 backdrop-blur-md bg-opacity-70">
-                      Home
-                    </div>
+                    <div class="flex-it h-14 p-4 xl:text-xl text-sm font-bold z-10 backdrop-blur-md bg-opacity-70">Home</div>
                   </div>
                   {children}
                 </div>
