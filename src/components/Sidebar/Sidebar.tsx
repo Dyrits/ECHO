@@ -1,12 +1,11 @@
 import { A } from "@solidjs/router";
 import { AiOutlineHome } from "solid-icons/ai";
 import { CgMoreO, CgProfile } from "solid-icons/cg";
-import { FiMoreHorizontal } from "solid-icons/fi";
 import { IoNotificationsCircleOutline } from "solid-icons/io";
 import { RiMapCompassDiscoverLine } from "solid-icons/ri";
 import { type Component, For } from "solid-js";
-
-import { user } from "@/App";
+import Popup from "@/components/Popup/Popup";
+import ProfileMenu from "@/components/Sidebar/_ProfileMenu";
 import type { Link } from "@/types";
 
 const links: Link[] = [
@@ -59,24 +58,7 @@ const Sidebar: Component = () => {
                 </div>
               </div>
             </div>
-            {/* PROFILE MENU */}
-            <div class="flex-it my-3 hover:cursor-pointer">
-              {/* POPUP START*/}
-              <div class="flex-it items-center flex-row p-3 rounded-3xl hover:bg-gray-800 hover:rounded-3xl transition duration-200 cursor-pointer">
-                <div class="flex-it">
-                  <div class="w-10 h-10 overflow-visible">
-                    <img class="rounded-full" src={user.avatar}></img>
-                  </div>
-                </div>
-                <div class="flex-it xl:flex hidden flex-grow flex-row justify-between items-center">
-                  <div class="flex-it mx-3 font-bold">Filip99</div>
-                  <div class="flex-it">
-                    <FiMoreHorizontal />
-                  </div>
-                </div>
-              </div>
-              {/* POPUP END */}
-            </div>
+            <ProfileMenu />
           </div>
         </div>
       </div>
