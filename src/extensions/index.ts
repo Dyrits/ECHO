@@ -7,7 +7,7 @@ declare global {
 }
 
 Date.prototype.ago = function () {
-  const seconds = Math.floor((new Date().getTime() - this.getTime()) / 1000);
+  const seconds = Math.floor((Date.now() - this.getTime()) / 1000);
   const intervals = [
     { label: "d", seconds: 86400 },
     { label: "h", seconds: 3600 },
