@@ -60,10 +60,10 @@ type PopupContentProps = {
 const PopupContent: ParentComponent<PopupContentProps> = (properties) => {
   const { show } = usePopup();
   const position = {
-    [Position.Top]: "-top-full",
-    [Position.Bottom]: "top-full",
-    [Position.Left]: "left-full",
-    [Position.Right]: "left-full",
+    [Position.Top]: "bottom-full left-0",
+    [Position.Bottom]: "top-full left-0",
+    [Position.Left]: "right-full top-0",
+    [Position.Right]: "left-full top-0",
   }[properties.position];
 
   return (

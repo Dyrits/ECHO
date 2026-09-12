@@ -26,7 +26,7 @@ const ProfileMenu: Component = () => {
           <div class="flex-it items-center flex-row p-3 rounded-3xl hover:bg-gray-800 hover:rounded-3xl transition duration-200 cursor-pointer">
             <div class="flex-it">
               <div class="w-10 h-10 overflow-visible">
-                <img class="rounded-full" src={user.avatar}></img>
+                <img alt={user.name} class="rounded-full" src={user.avatar}></img>
               </div>
             </div>
             <div class="flex-it xl:flex hidden flex-grow flex-row justify-between items-center">
