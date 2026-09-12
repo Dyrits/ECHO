@@ -19,7 +19,9 @@ const SignUpPage: Component = () => {
                       name="fullName"
                       type="text"
                     />
-                    <div class="flex-it grow text-xs bg-red-400 text-white p-3 pl-3 mt-1 rounded-md">Error Error Beep Beep!</div>
+                    <div class="flex-it grow text-xs bg-red-400 text-white p-3 pl-3 mt-1 rounded-md">
+                      Error Error Beep Beep!
+                    </div>
                   </div>
 
                   <div class="flex-it py-2">
@@ -63,7 +65,9 @@ const SignUpPage: Component = () => {
                   </div>
 
                   <div class="flex-it py-2">
-                    <label class="block text-sm font-medium text-gray-700">Password Confirmation</label>
+                    <label class="block text-sm font-medium text-gray-700">
+                      Password Confirmation
+                    </label>
                     <input
                       class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                       id="passwordConfirmation"

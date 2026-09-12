@@ -1,6 +1,8 @@
 import { Route, Router } from "@solidjs/router";
 import { type Component, createUniqueId, lazy } from "solid-js";
+
 import HomePage from "@/pages/HomePage";
+
 import type { User } from "./types";
 
 const SignInPage = lazy(() => import("@/pages/SignInPage"));

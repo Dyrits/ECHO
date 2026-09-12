@@ -1,4 +1,11 @@
-import { type Accessor, createContext, createSignal, type ParentComponent, Show, useContext } from "solid-js";
+import {
+  type Accessor,
+  createContext,
+  createSignal,
+  type ParentComponent,
+  Show,
+  useContext,
+} from "solid-js";
 
 type PopupContextState = {
   show: Accessor<boolean>;

@@ -19,7 +19,9 @@ const SignInPage: Component = () => {
                       name="email"
                       type="email"
                     />
-                    <div class="flex-it grow text-xs bg-red-400 text-white p-3 pl-3 mt-1 rounded-md">Error Error Beep Beep!</div>
+                    <div class="flex-it grow text-xs bg-red-400 text-white p-3 pl-3 mt-1 rounded-md">
+                      Error Error Beep Beep!
+                    </div>
                   </div>
                   <div class="flex-it py-2">
                     <label class="block text-sm font-medium text-gray-700">Password</label>

@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./",
+    "customConditions": ["browser"],
     "esModuleInterop": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "noEmit": true,
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
     "strict": true,
     "target": "ESNext",

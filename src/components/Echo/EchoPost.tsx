@@ -2,6 +2,7 @@ import { AiOutlineMessage } from "solid-icons/ai";
 import { FaRegularHeart } from "solid-icons/fa";
 import { FiTrash } from "solid-icons/fi";
 import type { Component } from "solid-js";
+
 import type { Echo } from "../../types";
 
 import "@/extensions";

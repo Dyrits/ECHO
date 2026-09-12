@@ -1,5 +1,6 @@
 import { FaRegularImage } from "solid-icons/fa";
 import { type Component, createSignal, createUniqueId, For } from "solid-js";
+
 import { user } from "@/App";
 import EchoPost from "@/components/Echo/EchoPost";
 import MainLayout from "@/layouts/MainLayout";

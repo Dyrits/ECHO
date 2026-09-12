@@ -4,6 +4,7 @@ import { BsMusicNoteList } from "solid-icons/bs";
 import { CgMoreO, CgProfile } from "solid-icons/cg";
 import { FaSolidDoorOpen, FaSolidKey } from "solid-icons/fa";
 import { type Component, For } from "solid-js";
+
 import IconLink from "@/components/IconLink";
 import ProfileMenu from "@/components/Sidebar/_ProfileMenu";
 import type { Link } from "@/types";
@@ -36,7 +37,11 @@ const Sidebar: Component = () => {
           <For each={links}>
             {(link) => (
               <div class="my-2">
-                <IconLink href={link.href} icon={{ component: link.icon, size: 24 }} label={link.label} />
+                <IconLink
+                  href={link.href}
+                  icon={{ component: link.icon, size: 24 }}
+                  label={link.label}
+                />
               </div>
             )}
           </For>
