@@ -20,9 +20,13 @@ export default defineConfig({
   },
   plugins: lazyPlugins(() => [solidPlugin()]),
   resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src"),
-    },
+    alias: [
+      { find: "@", replacement: path.resolve(__dirname, "src") },
+      {
+        find: /^solid-icons\/(.+)$/,
+        replacement: path.resolve(__dirname, "node_modules/solid-icons/$1/index.js"),
+      },
+    ],
   },
   server: {
     port: 3000,

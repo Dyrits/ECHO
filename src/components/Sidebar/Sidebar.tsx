@@ -28,7 +28,7 @@ const Sidebar: Component = () => {
         <a href="#">
           <A class="w-full hover:text-yellow-300" href={String()}>
             <div class="flex p-2 flex-row justify-start items-center">
-              <BsMusicNoteList color={"FDE047"} size={32} />
+              <BsMusicNoteList color="#FDE047" size={32} />
               <h1 class="mx-6 text-4xl xl:block hidden ">Echo</h1>
             </div>
           </A>
