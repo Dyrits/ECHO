@@ -4,6 +4,8 @@ import {
   createSignal,
   type ParentComponent,
   Show,
+  onCleanup,
+  onMount,
   useContext,
 } from "solid-js";
 
@@ -25,7 +27,9 @@ const usePopup = () => {
 };
 
 const PopupBox: ParentComponent = (properties) => {
+  let box: HTMLDivElement;
   const [show, setShow] = createSignal<boolean>(false);
+
   const value: PopupContextState = {
     show,
     toggle: () => {
@@ -33,9 +37,30 @@ const PopupBox: ParentComponent = (properties) => {
     },
   };
 
+  onMount(() => {
+    const hide = (event: PointerEvent) => {
+      if (event.target instanceof Node && !box.contains(event.target)) {
+        setShow(false);
+      }
+    };
+
+    document.addEventListener("pointerdown", hide);
+
+    onCleanup(() => {
+      document.removeEventListener("pointerdown", hide);
+    });
+  });
+
   return (
     <PopupContext.Provider value={value}>
-      <div class="relative w-full">{properties.children}</div>
+      <div
+        class="relative w-full"
+        ref={(element) => {
+          box = element;
+        }}
+      >
+        {properties.children}
+      </div>
     </PopupContext.Provider>
   );
 };
@@ -68,7 +93,7 @@ const PopupContent: ParentComponent<PopupContentProps> = (properties) => {
 
   return (
     <Show when={show()}>
-      <div class={`absolute ${position} w-full`}>{properties.children}</div>
+      <div class={`absolute z-50 ${position} w-full`}>{properties.children}</div>
     </Show>
   );
 };
