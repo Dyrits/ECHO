@@ -23,7 +23,7 @@ const links: Link[] = [
 
 const Sidebar: Component = () => {
   return (
-    <header class="flex h-full w-20 flex-col items-center justify-between border-r-1 border-gray-700 px-2 xl:w-60">
+    <div class="flex h-full w-20 shrink-0 flex-col items-center justify-between border-r-1 border-gray-700 px-2 xl:w-60">
       <div>
         <A class="w-full hover:text-yellow-300" href="/">
           <div class="flex flex-row items-center justify-start p-2">
@@ -46,7 +46,7 @@ const Sidebar: Component = () => {
         </nav>
       </div>
       <ProfileMenu />
-    </header>
+    </div>
   );
 };
 
