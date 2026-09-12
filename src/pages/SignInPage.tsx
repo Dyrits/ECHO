@@ -3,15 +3,15 @@ import type { Component } from "solid-js";
 
 const SignInPage: Component = () => {
   return (
-    <div class="flex-it justify-center items-center h-full">
+    <div class="flex flex-col justify-center items-center h-full">
       <div class="text-white text-4xl font-bold">Echo | Sign-in</div>
-      <div class="mt-10 flex-it h-100 xs:w-100 w-full bg-white p-10 rounded-2xl">
-        <div class="flex-it">
-          <form class="flex-it">
-            <div class="flex-it overflow-hidden sm:rounded-md">
-              <div class="flex-it">
-                <div class="flex-it">
-                  <div class="flex-it py-2">
+      <div class="mt-10 flex flex-col h-100 xs:w-100 w-full bg-white p-10 rounded-2xl">
+        <div class="flex flex-col">
+          <form class="flex flex-col">
+            <div class="flex flex-col overflow-hidden sm:rounded-md">
+              <div class="flex flex-col">
+                <div class="flex flex-col">
+                  <div class="flex flex-col py-2">
                     <label class="block text-sm font-medium text-gray-700">Email</label>
                     <input
                       class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
@@ -19,11 +19,11 @@ const SignInPage: Component = () => {
                       name="email"
                       type="email"
                     />
-                    <div class="flex-it grow text-xs bg-red-400 text-white p-3 pl-3 mt-1 rounded-md">
+                    <div class="flex flex-col grow text-xs bg-red-400 text-white p-3 pl-3 mt-1 rounded-md">
                       Error Error Beep Beep!
                     </div>
                   </div>
-                  <div class="flex-it py-2">
+                  <div class="flex flex-col py-2">
                     <label class="block text-sm font-medium text-gray-700">Password</label>
                     <input
                       class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
@@ -40,7 +40,7 @@ const SignInPage: Component = () => {
                   Sign-up
                 </A>
               </div>
-              <div class="flex-it py-2">
+              <div class="flex flex-col py-2">
                 <button
                   class="
                   bg-blue-400 hover:bg-blue-500

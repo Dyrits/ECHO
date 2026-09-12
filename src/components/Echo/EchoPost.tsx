@@ -16,16 +16,16 @@ const EchoPost: Component<Properties> = (props) => {
   const user = () => echo().author;
 
   return (
-    <div class="flex-it p-4 border-b-1 border-solid border-gray-700">
-      <div class="flex-it flex-row">
-        <div class="flex-it mr-4">
+    <div class="flex flex-col p-4 border-b-1 border-solid border-gray-700">
+      <div class="flex flex-row">
+        <div class="flex flex-col mr-4">
           <div class="w-12 h-12 overflow-visible cursor-pointer transition duration-200 hover:opacity-80">
             <img alt="avatar" class="rounded-full" src={user().avatar}></img>
           </div>
         </div>
-        <article class="flex-it flex-grow flex-shrink cursor-pointer">
-          <div class="flex-it justify-center flex-grow mb-1">
-            <div class="flex-it justify-between flex-row w-full">
+        <article class="flex flex-col flex-grow flex-shrink cursor-pointer">
+          <div class="flex flex-col justify-center flex-grow mb-1">
+            <div class="flex flex-row justify-between w-full">
               <div>
                 <span class="font-bold">{echo().author.name}</span>
                 <span class="mx-2">&#8226;</span>
@@ -36,15 +36,15 @@ const EchoPost: Component<Properties> = (props) => {
               </div>
             </div>
           </div>
-          <div class="flex-it flex-row flex-grow-0 items-center mb-2">
-            <div class="flex-it mr-3 mb-3 w-full">{echo().content}</div>
+          <div class="flex flex-row flex-grow-0 items-center mb-2">
+            <div class="flex flex-col mr-3 mb-3 w-full">{echo().content}</div>
           </div>
-          <div class="flex-it flex-row flex-grow text-gray-400">
-            <div class="flex-it flex-row items-center cursor-pointer mr-5 transition hover:text-blue-400">
+          <div class="flex flex-row flex-grow text-gray-400">
+            <div class="flex flex-row items-center cursor-pointer mr-5 transition hover:text-blue-400">
               <AiOutlineMessage size={18} />
               <span class="text-xs ml-3">{echo().murmurs.length}</span>
             </div>
-            <div class="flex-it flex-row items-center cursor-pointer transition hover:text-pink-400">
+            <div class="flex flex-row items-center cursor-pointer transition hover:text-pink-400">
               <FaRegularHeart size={18} />
               <span class="text-xs ml-3">{echo().likes}</span>
             </div>
