@@ -12,6 +12,9 @@ const generateREMSizes = (limit, from = 80) => {
 
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   plugins: [require("@tailwindcss/forms")],
   theme: {
     extend: {

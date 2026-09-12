@@ -8,15 +8,44 @@ export default defineConfig({
     target: "esnext",
   },
   fmt: {
-    sortImports: true,
+    sortImports: {
+      customGroups: [],
+      groups: [
+        "builtin",
+        "external",
+        ["internal", "subpath"],
+        ["parent", "sibling", "index"],
+        "style",
+        "unknown",
+      ],
+      ignoreCase: false,
+      internalPattern: ["@/"],
+      newlinesBetween: true,
+      order: "asc",
+      partitionByComment: false,
+      partitionByNewline: false,
+      // Reordering side-effect imports can change application behavior.
+      sortSideEffects: false,
+    },
     sortPackageJson: {
       sortScripts: true,
+    },
+    sortTailwindcss: {
+      attributes: [],
+      config: "./tailwind.config.js",
+      functions: [],
+      preserveDuplicates: false,
+      preserveWhitespace: false,
     },
   },
   lint: {
     jsPlugins: [{ name: "vite-plus", specifier: "vite-plus/oxlint-plugin" }],
     options: { typeAware: true, typeCheck: true },
-    rules: { "vite-plus/prefer-vite-plus-imports": "error" },
+    plugins: ["jsx-a11y"],
+    rules: {
+      "jsx-a11y/click-events-have-key-events": "error",
+      "vite-plus/prefer-vite-plus-imports": "error",
+    },
   },
   plugins: lazyPlugins(() => [solidPlugin()]),
   resolve: {

@@ -10,33 +10,29 @@ const ProfileMenu: Component = () => {
   return (
     <Popup.Box>
       <Popup.Content position={Position.Top}>
-        <A class="flex flex-col items-start flex-grow w-full" href={"/sign-out"}>
-          <div class="p-3 flex flex-row justify-center items-center rounded-3xl hover:bg-gray-800 hover:rounded-3xl transition duration-200">
-            <div class="flex flex-col">
+        <A class="block w-full" href="/sign-out" role="menuitem">
+          <div class="flex flex-row items-center justify-center rounded-2xl p-3 transition duration-200 hover:bg-gray-700 xl:justify-start">
+            <div class="flex shrink-0 flex-col">
               <RiDeviceShutDownLine size={24} />
             </div>
-            <div class="mx-4 text-2xl truncate xl:block hidden">
+            <div class="mx-4 hidden truncate text-lg xl:block">
               <span class="truncate">Sign-out</span>
             </div>
           </div>
         </A>
       </Popup.Content>
       <Popup.Trigger>
-        <div class="flex flex-col m-3 hover:cursor-pointer">
-          <div class="flex flex-row items-center p-3 rounded-3xl hover:bg-gray-800 hover:rounded-3xl transition duration-200 cursor-pointer">
-            <div class="flex flex-col">
-              <div class="w-10 h-10 overflow-visible">
-                <img alt={user.name} class="rounded-full" src={user.avatar}></img>
-              </div>
-            </div>
-            <div class="hidden xl:flex flex-grow flex-row justify-between items-center">
-              <div class="flex flex-col mx-3 font-bold">{user.name}</div>
-              <div class="flex flex-col">
-                <FiMoreHorizontal />
-              </div>
-            </div>
-          </div>
-        </div>
+        <span class="flex w-full flex-row items-center justify-center rounded-3xl p-3 transition duration-200 hover:bg-gray-800 xl:justify-start">
+          <span class="h-10 w-10 shrink-0 overflow-visible">
+            <img alt={user.name} class="rounded-full" src={user.avatar} />
+          </span>
+          <span class="hidden flex-grow flex-row items-center justify-between xl:flex">
+            <span class="mx-3 font-bold">{user.name}</span>
+            <span>
+              <FiMoreHorizontal />
+            </span>
+          </span>
+        </span>
       </Popup.Trigger>
     </Popup.Box>
   );

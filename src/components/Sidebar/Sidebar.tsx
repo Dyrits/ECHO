@@ -23,16 +23,14 @@ const links: Link[] = [
 
 const Sidebar: Component = () => {
   return (
-    <header class="xl:w-60 w-20 h-full px-2 flex flex-col items-center justify-between border-r-1 border-gray-700">
+    <header class="flex h-full w-20 flex-col items-center justify-between border-r-1 border-gray-700 px-2 xl:w-60">
       <div>
-        <a href="#">
-          <A class="w-full hover:text-yellow-300" href={String()}>
-            <div class="flex p-2 flex-row justify-start items-center">
-              <BsMusicNoteList color="#FDE047" size={32} />
-              <h1 class="mx-6 text-4xl xl:block hidden ">Echo</h1>
-            </div>
-          </A>
-        </a>
+        <A class="w-full hover:text-yellow-300" href="/">
+          <div class="flex flex-row items-center justify-start p-2">
+            <BsMusicNoteList color="#FDE047" size={32} />
+            <h1 class="mx-6 hidden text-4xl xl:block">Echo</h1>
+          </div>
+        </A>
         <nav>
           <For each={links}>
             {(link) => (

@@ -13,9 +13,9 @@ type IconLinkProperties = {
 const IconLink: Component<IconLinkProperties> = (properties) => {
   return (
     <A class="w-full" href={properties.href}>
-      <div class="flex p-2 flex-row justify-start items-center rounded-2xl hover:bg-gray-800 transition duration-200">
+      <div class="flex flex-row items-center justify-start rounded-2xl p-2 transition duration-200 hover:bg-gray-800">
         <div>{properties.icon.component({ size: properties.icon.size })}</div>
-        <div class="mx-4 text-2xl truncate xl:block hidden">
+        <div class="mx-4 hidden truncate text-2xl xl:block">
           <span class="truncate">{properties.label}</span>
         </div>
       </div>

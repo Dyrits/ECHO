@@ -27,13 +27,13 @@ const usePopup = () => {
 };
 
 const PopupBox: ParentComponent = (properties) => {
-  let box: HTMLDivElement;
+  let box!: HTMLDivElement;
   const [show, setShow] = createSignal<boolean>(false);
 
   const value: PopupContextState = {
     show,
     toggle: () => {
-      setShow(!show());
+      setShow((visible) => !visible);
     },
   };
 
@@ -66,9 +66,19 @@ const PopupBox: ParentComponent = (properties) => {
 };
 
 const PopupTrigger: ParentComponent = (properties) => {
-  const { toggle } = usePopup();
+  const { show, toggle } = usePopup();
 
-  return <div onClick={toggle}>{properties.children}</div>;
+  return (
+    <button
+      aria-expanded={show()}
+      aria-haspopup="menu"
+      class="block w-full border-0 bg-transparent p-0 text-left text-inherit"
+      onClick={toggle}
+      type="button"
+    >
+      {properties.children}
+    </button>
+  );
 };
 
 export enum Position {
@@ -85,15 +95,17 @@ type PopupContentProps = {
 const PopupContent: ParentComponent<PopupContentProps> = (properties) => {
   const { show } = usePopup();
   const position = {
-    [Position.Top]: "bottom-full left-0",
-    [Position.Bottom]: "top-full left-0",
-    [Position.Left]: "right-full top-0",
-    [Position.Right]: "left-full top-0",
+    [Position.Top]: "bottom-full left-0 mb-2",
+    [Position.Bottom]: "top-full left-0 mt-2",
+    [Position.Left]: "right-full top-0 mr-2",
+    [Position.Right]: "left-full top-0 ml-2",
   }[properties.position];
 
   return (
     <Show when={show()}>
-      <div class={`absolute z-50 ${position} w-full`}>{properties.children}</div>
+      <div class={`absolute z-50 ${position} w-full rounded-2xl bg-gray-800 shadow-lg`} role="menu">
+        {properties.children}
+      </div>
     </Show>
   );
 };

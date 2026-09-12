@@ -27,17 +27,17 @@ const HomePage: Component = () => {
 
   return (
     <MainLayout>
-      <div class="flex flex-row py-1 px-4">
-        <div class="flex flex-col mr-4">
-          <div class="w-12 h-12 overflow-visible cursor-pointer transition duration-200 hover:opacity-80">
+      <div class="flex flex-row px-4 py-1">
+        <div class="mr-4 flex flex-col">
+          <div class="h-12 w-12 cursor-pointer overflow-visible transition duration-200 hover:opacity-80">
             <img alt="avatar" class="rounded-full" src={user.avatar}></img>
           </div>
         </div>
         {/* MESSENGER START */}
-        <div class="flex flex-col flex-grow">
+        <div class="flex flex-grow flex-col">
           <div class="flex flex-col">
             <textarea
-              class="bg-transparent resize-none overflow-hidden block !outline-none !border-none border-transparent focus:border-transparent focus:ring-0 text-gray-100 text-xl w-full p-0"
+              class="block w-full resize-none overflow-hidden !border-none border-transparent bg-transparent p-0 text-xl text-gray-100 !outline-none focus:border-transparent focus:ring-0"
               id="echo"
               name="content"
               onInput={($event) => {
@@ -48,20 +48,23 @@ const HomePage: Component = () => {
               value={message()}
             />
           </div>
-          <div class="flex flex-row mb-1 xs:justify-between items-center">
-            <div class="flex flex-col mt-3 mr-3 cursor-pointer text-white hover:text-blue-400 transition">
-              <div class="upload-btn-wrapper">
-                <FaRegularImage class="cursor-pointer" size={18} />
-                <input name="myfile" type="file" />
-              </div>
-            </div>
-            <div class="flex flex-col w-32 mt-3 cursor-pointer">
+          <div class="mb-1 flex flex-row items-center xs:justify-between">
+            <label
+              class="mr-3 mt-3 inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full text-white transition focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-400 focus-within:ring-offset-2 focus-within:ring-offset-gray-900 hover:bg-blue-400/10 hover:text-blue-400"
+              title="Add an image"
+            >
+              <FaRegularImage aria-hidden="true" size={18} />
+              <span class="sr-only">Add an image</span>
+              <input accept="image/*" class="sr-only" name="image" type="file" />
+            </label>
+            <div class="mt-3 flex w-32 cursor-pointer flex-col">
               <button
-                class="disabled:cursor-not-allowed disabled:bg-gray-400 bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-full flex flex-col transition duration-200"
+                aria-label="Send an echo"
+                class="flex flex-col rounded-full bg-blue-400 px-4 py-2 font-bold text-white transition duration-200 hover:bg-blue-500 disabled:cursor-not-allowed disabled:bg-gray-400"
                 onClick={createEcho}
                 type="button"
               >
-                <div class="flex flex-row text-sm font-bold text-white items-start justify-center">
+                <div class="flex flex-row items-start justify-center text-sm font-bold text-white">
                   <span>Send an echo</span>
                 </div>
               </button>
@@ -70,7 +73,7 @@ const HomePage: Component = () => {
         </div>
         {/* MESSENGER END */}
       </div>
-      <div class="h-px bg-gray-700 my-1" />
+      <div class="my-1 h-px bg-gray-700" />
       <For each={echoes()}>{(echo) => <EchoPost echo={echo} />}</For>
     </MainLayout>
   );

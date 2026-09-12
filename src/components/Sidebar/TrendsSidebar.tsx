@@ -44,17 +44,17 @@ const trends: Trend[] = [
 
 const TrendsSidebar: Component = () => {
   return (
-    <div class="bg-gray-800 overflow-hidden flex flex-col rounded-2xl">
+    <div class="flex flex-col overflow-hidden rounded-2xl bg-gray-800">
       <div class="flex flex-col p-4">
         <span class="text-xl font-bold">Trends</span>
       </div>
       <For each={trends}>
         {(trend) => (
-          <div class="flex flex-col p-4 cursor-pointer transition duration-200 hover:bg-gray-700">
+          <div class="flex cursor-pointer flex-col p-4 transition duration-200 hover:bg-gray-700">
             <div class="flex flex-col">
-              <span class="text-gray-400 text-sm">{trend.category}</span>
+              <span class="text-sm text-gray-400">{trend.category}</span>
               <span class="text-lg font-bold">{trend.title}</span>
-              <span class="text-gray-400 text-sm">{trend.echoes} echoes</span>
+              <span class="text-sm text-gray-400">{trend.echoes} echoes</span>
             </div>
           </div>
         )}

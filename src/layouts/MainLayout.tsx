@@ -4,7 +4,7 @@ import { Sidebar, TrendsSidebar } from "../components/Sidebar";
 
 const MainLayout: ParentComponent = ({ children }) => {
   return (
-    <div class="w-full h-screen bg-gray-900 text-gray-100 flex justify-between">
+    <div class="flex h-screen w-full justify-between bg-gray-900 text-gray-100">
       <header>
         <Sidebar />
       </header>

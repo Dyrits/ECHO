@@ -16,37 +16,37 @@ const EchoPost: Component<Properties> = (props) => {
   const user = () => echo().author;
 
   return (
-    <div class="flex flex-col p-4 border-b-1 border-solid border-gray-700">
+    <div class="flex flex-col border-b-1 border-solid border-gray-700 p-4">
       <div class="flex flex-row">
-        <div class="flex flex-col mr-4">
-          <div class="w-12 h-12 overflow-visible cursor-pointer transition duration-200 hover:opacity-80">
+        <div class="mr-4 flex flex-col">
+          <div class="h-12 w-12 cursor-pointer overflow-visible transition duration-200 hover:opacity-80">
             <img alt="avatar" class="rounded-full" src={user().avatar}></img>
           </div>
         </div>
-        <article class="flex flex-col flex-grow flex-shrink cursor-pointer">
-          <div class="flex flex-col justify-center flex-grow mb-1">
-            <div class="flex flex-row justify-between w-full">
+        <article class="flex flex-shrink flex-grow cursor-pointer flex-col">
+          <div class="mb-1 flex flex-grow flex-col justify-center">
+            <div class="flex w-full flex-row justify-between">
               <div>
                 <span class="font-bold">{echo().author.name}</span>
                 <span class="mx-2">&#8226;</span>
                 <span class="text-gray-400">{echo().date.ago()}</span>
               </div>
-              <div class="text-gray-400 cursor-pointer transition hover:text-red-400">
+              <div class="cursor-pointer text-gray-400 transition hover:text-red-400">
                 <FiTrash size={16} />
               </div>
             </div>
           </div>
-          <div class="flex flex-row flex-grow-0 items-center mb-2">
-            <div class="flex flex-col mr-3 mb-3 w-full">{echo().content}</div>
+          <div class="mb-2 flex flex-grow-0 flex-row items-center">
+            <div class="mb-3 mr-3 flex w-full flex-col">{echo().content}</div>
           </div>
-          <div class="flex flex-row flex-grow text-gray-400">
-            <div class="flex flex-row items-center cursor-pointer mr-5 transition hover:text-blue-400">
+          <div class="flex flex-grow flex-row text-gray-400">
+            <div class="mr-5 flex cursor-pointer flex-row items-center transition hover:text-blue-400">
               <AiOutlineMessage size={18} />
-              <span class="text-xs ml-3">{echo().murmurs.length}</span>
+              <span class="ml-3 text-xs">{echo().murmurs.length}</span>
             </div>
-            <div class="flex flex-row items-center cursor-pointer transition hover:text-pink-400">
+            <div class="flex cursor-pointer flex-row items-center transition hover:text-pink-400">
               <FaRegularHeart size={18} />
-              <span class="text-xs ml-3">{echo().likes}</span>
+              <span class="ml-3 text-xs">{echo().likes}</span>
             </div>
           </div>
         </article>
